@@ -294,3 +294,10 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 20ms (Views: 10.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2016-08-06 19:23:59 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 951ms (Views: 941.6ms | ActiveRecord: 0.0ms)
+
+
