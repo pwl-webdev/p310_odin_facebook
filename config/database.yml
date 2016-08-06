@@ -23,8 +23,8 @@ default: &default
   host: localhost
   #username: ENV["POSTGRESQL_USER"]
   #password: ENV["POSTGRESQL_PASSWORD"]
-  username: jan
-  password: 10Pomidor?
+  username: devuser
+  password: qazxswedc
 
 development:
   <<: *default
