@@ -749,3 +749,442 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2016-08-07 11:49:44 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb (5.2ms)
+  Rendering devise/registrations/new.html.erb
+  Rendered devise/registrations/new.html.erb (1.3ms)
+  Rendered static_pages/home.html.erb within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/jan/the_odin_project/310_project_rails_final/p310_odin_facebook/app/views/devise/registrations/new.html.erb:34: unterminated string meets end of file
+/home/jan/the_odin_project/310_project_rails_final/p310_odin_facebook/app/views/devise/registrations/new.html.erb:34: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/devise/registrations/new.html.erb:34: unterminated string meets end of file
+app/views/devise/registrations/new.html.erb:34: syntax error, unexpected end-of-input, expecting ')'
+app/views/static_pages/home.html.erb:4:in `_app_views_static_pages_home_html_erb__2599140198807229096_70167455157380'
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.0ms)
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.3ms)
+Started GET "/" for 127.0.0.1 at 2016-08-07 11:50:23 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/sessions/new.html.erb (5.0ms)
+  Rendering devise/registrations/new.html.erb
+  Rendered devise/registrations/new.html.erb (1.3ms)
+  Rendered static_pages/home.html.erb within layouts/application (9.6ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/jan/the_odin_project/310_project_rails_final/p310_odin_facebook/app/views/devise/registrations/new.html.erb:34: unterminated string meets end of file
+/home/jan/the_odin_project/310_project_rails_final/p310_odin_facebook/app/views/devise/registrations/new.html.erb:34: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/devise/registrations/new.html.erb:34: unterminated string meets end of file
+app/views/devise/registrations/new.html.erb:34: syntax error, unexpected end-of-input, expecting ')'
+app/views/static_pages/home.html.erb:4:in `_app_views_static_pages_home_html_erb__2599140198807229096_70167528952940'
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.4ms)
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.1ms)
+Started GET "/" for 127.0.0.1 at 2016-08-07 11:50:28 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/sessions/new.html.erb (3.6ms)
+  Rendering devise/registrations/new.html.erb
+  Rendered devise/registrations/new.html.erb (1.1ms)
+  Rendered static_pages/home.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/jan/the_odin_project/310_project_rails_final/p310_odin_facebook/app/views/devise/registrations/new.html.erb:34: unterminated string meets end of file
+/home/jan/the_odin_project/310_project_rails_final/p310_odin_facebook/app/views/devise/registrations/new.html.erb:34: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/devise/registrations/new.html.erb:34: unterminated string meets end of file
+app/views/devise/registrations/new.html.erb:34: syntax error, unexpected end-of-input, expecting ')'
+app/views/static_pages/home.html.erb:4:in `_app_views_static_pages_home_html_erb__2599140198807229096_70167531952480'
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.9ms)
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.7ms)
+Started GET "/" for 127.0.0.1 at 2016-08-07 11:50:35 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/sessions/new.html.erb (2.6ms)
+  Rendering devise/registrations/new.html.erb
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb (6.3ms)
+  Rendered static_pages/home.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-07 11:50:56 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/sessions/new.html.erb (3.2ms)
+  Rendering devise/registrations/new.html.erb
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered devise/registrations/new.html.erb (7.2ms)
+  Rendered static_pages/home.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-07 11:51:46 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/sessions/new.html.erb (2.6ms)
+  Rendering devise/registrations/new.html.erb
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb (6.4ms)
+  Rendered static_pages/home.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-08-07 11:54:26 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tcrZ1rIazX1ntl7ruTP/LlTcpAh1dGrJ+tAc4AKBFY1DROmOojMDbzbs2+iV5qcyht3woHdh9CQOMvCmIhiTxA==", "user"=>{"email"=>"janusz@janusz.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (46.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "janusz@janusz.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 96ms (ActiveRecord: 46.2ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tcrZ1rIazX1ntl7ruTP/LlTcpAh1dGrJ+tAc4AKBFY1DROmOojMDbzbs2+iV5qcyht3woHdh9CQOMvCmIhiTxA==", "user"=>{"email"=>"janusz@janusz.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 300ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-08-07 11:54:32 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6rmSm0mbRauwf30eEhqDQe1PGRhq1uTpUy4cenJGNBAcN6LDWbKLueEl+B0+z9tdP05NsGjDegSnzPA8Ut+yWQ==", "user"=>{"email"=>"janusz@janusz.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "janusz@janusz.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 1.7ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6rmSm0mbRauwf30eEhqDQe1PGRhq1uTpUy4cenJGNBAcN6LDWbKLueEl+B0+z9tdP05NsGjDegSnzPA8Ut+yWQ==", "user"=>{"email"=>"janusz@janusz.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 171ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-08-07 11:55:04 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tcrZ1rIazX1ntl7ruTP/LlTcpAh1dGrJ+tAc4AKBFY1DROmOojMDbzbs2+iV5qcyht3woHdh9CQOMvCmIhiTxA==", "user"=>{"email"=>"janusz@janusz.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "janusz@janusz.com"], ["LIMIT", 1]]
+  [1m[35mSQL (20.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "janusz@janusz.com"], ["encrypted_password", "$2a$11$3QNPlB5ObPNZE0dTT05BM.El8DYJVK8qtmLI3UEjUuUWSByynMt3S"], ["created_at", 2016-08-07 09:55:05 UTC], ["updated_at", 2016-08-07 09:55:05 UTC]]
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", 2016-08-07 09:55:05 UTC], ["last_sign_in_at", 2016-08-07 09:55:05 UTC], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", 2016-08-07 09:55:05 UTC], ["id", 1]]
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 260ms (ActiveRecord: 45.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-07 11:55:05 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/sessions/new.html.erb (3.3ms)
+  Rendering devise/registrations/new.html.erb
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb (5.3ms)
+  Rendered static_pages/home.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-07 11:58:38 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-07 11:59:14 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<User:0x007fa24d1d7710>):
+    1: <div class="container">
+    2: 	<% if user_signed_in? %>
+    3: 		Welcome, <%= current_user.name %> !
+    4: 	<% else %>
+    5: 		<%= render :template => "devise/sessions/new.html.erb" %>
+    6: 		<div class="u-pull-right">
+  
+app/views/static_pages/home.html.erb:3:in `_app_views_static_pages_home_html_erb__2599140198807229096_70167527918060'
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.2ms)
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.4ms)
+Started GET "/" for 127.0.0.1 at 2016-08-07 11:59:43 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-07 12:02:05 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (74.5ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `destroy_user_session' for #<#<Class:0x007fa24d9115d0>:0x007fa24da865c8>):
+    1: <div class="container">
+    2: 	<% if user_signed_in? %>
+    3: 		Welcome, <%= current_user.email %> !
+    4: 		<% link_to("Log out ", destroy_user_session)%>
+    5: 	<% else %>
+    6: 		<%= render :template => "devise/sessions/new.html.erb" %>
+    7: 		<div class="u-pull-right">
+  
+app/views/static_pages/home.html.erb:4:in `_app_views_static_pages_home_html_erb__2599140198807229096_70167532156960'
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.9ms)
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.5ms)
+Started GET "/" for 127.0.0.1 at 2016-08-07 12:02:22 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-07 12:02:34 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2016-08-07 12:02:35 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered collection of /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [16 times] (74.3ms)
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.4ms)
+  Rendering /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/jan/.rvm/gems/ruby-2.2.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (161.6ms)
+Started GET "/" for 127.0.0.1 at 2016-08-07 12:04:49 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 39ms (Views: 34.8ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-08-07 12:04:51 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dM8ZPBLjV3ntYa4d6pN4mQRAB8JQ6gWWNERaaLJQ6NqCQSlkAsqZa7w7Kx7GRiCF1kFTalL/m3vAprYukslukw=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 40ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-07 12:04:51 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/sessions/new.html.erb (3.3ms)
+  Rendering devise/registrations/new.html.erb
+  Rendered devise/shared/_links.html.erb (3.2ms)
+  Rendered devise/registrations/new.html.erb (9.3ms)
+  Rendered static_pages/home.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-08-07 12:04:58 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rwiv9dRwxeQBBfvhDk21SGW5XMIXYNgkCJzxb0aRc4jcLcdSjR6hbDJeseG6pNKrkwBDx3Oe3LIpEMLmvGievQ==", "user"=>{"email"=>"janusz@janusz.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "janusz@janusz.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", 2016-08-07 10:04:58 UTC], ["sign_in_count", 2], ["updated_at", 2016-08-07 10:04:58 UTC], ["id", 1]]
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 166ms (ActiveRecord: 10.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-07 12:04:59 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-08-07 12:05:00 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"u5gJT8ZYKY0JCEBB9jjN9XHmE5uzUvWD03R2LW873fyfr31qaEaNRkk+/QHOFXon3rf3peMrJonuxBiO4mScVQ=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-07 12:05:00 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/sessions/new.html.erb (3.9ms)
+  Rendering devise/registrations/new.html.erb
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb (5.1ms)
+  Rendered static_pages/home.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-08-07 12:05:19 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nsbR7Ja0Iod2QW+k3DKTaSdz89+L51VcMUNQPduS0oODjVxCBnFA0L2PPp1+jLlxKLzhkY9L45/0MUcW4OsKvw==", "user"=>{"email"=>"artur@artur.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "artur@artur.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 185ms (Views: 27.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-08-07 12:05:37 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q48Yo484KUKiwc/AFMA5pQMjMvg88ez5bAfdBJsJqdW2xJUNH/1LFWkPnvm2fhO9DOwgtjhdWjqpdcovoHBx6Q==", "user"=>{"email"=>"artur@artur.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "artur@artur.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "artur@artur.com"], ["encrypted_password", "$2a$11$yEaflz4QakYYl1R4Yl9CXeGrXpjlh5l9rpe7/ohYzaCf7pvxB9UCi"], ["created_at", 2016-08-07 10:05:37 UTC], ["updated_at", 2016-08-07 10:05:37 UTC]]
+  [1m[35m (21.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", 2016-08-07 10:05:37 UTC], ["last_sign_in_at", 2016-08-07 10:05:37 UTC], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", 2016-08-07 10:05:37 UTC], ["id", 2]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 186ms (ActiveRecord: 27.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-07 12:05:37 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-08-07 12:05:39 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PPoOjCNzECVqX1/jTpQlUrVMStw+a74l8yXt7PQg5bohsYMis7ZycqGRDtrsKg9KuoNYkjrHCOY2V/rHz1k9hg=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-07 12:05:39 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendering devise/sessions/new.html.erb
+  Rendered devise/sessions/new.html.erb (3.8ms)
+  Rendering devise/registrations/new.html.erb
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb (18.2ms)
+  Rendered static_pages/home.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 53ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-08-07 12:05:54 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u5aDA1cinP5pmj+S3G8dk4mcqdHinQfW5BzMK8ixK03WfkJH6pcw5nEzwnk7LZ9crEGH9/269AoA9xwT9Cy76g==", "user"=>{"email"=>"artur@artur.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "artur@artur.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", 2016-08-07 10:05:54 UTC], ["sign_in_count", 2], ["updated_at", 2016-08-07 10:05:54 UTC], ["id", 2]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 165ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-07 12:05:54 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.8ms)
+
+
