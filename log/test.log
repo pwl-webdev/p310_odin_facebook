@@ -1,0 +1,130 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$ymNhksJPAyu9V44.q2pDPueohWplc5l71SFhGSASTdjxtbTXo.iUC', '2016-08-07 12:04:31 UTC', '2016-08-07 12:04:31.974406', '2016-08-07 12:04:31.974406', 762146111)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$YhemnEFLFM6Koojlc/Ps0.iIBXUHQMByIuw..ED7kSJa4/C5Ngs8.', '2016-08-07 12:04:53 UTC', '2016-08-07 12:04:53.534644', '2016-08-07 12:04:53.534644', 762146111)[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$Eo8OeLiosdbQaOkVmlQQ/e2TsNPZISKLWpSpIoPfPrk2J1UKx38SK', '2016-08-07 12:04:53 UTC', '2016-08-07 12:04:53.534644', '2016-08-07 12:04:53.534644', 950961012)[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$xPsVOvhTQ8EJzqIb3IXbUewqErGtRdr/tgHDJPCauez3xyN93lyD2', '2016-08-07 12:04:53 UTC', '2016-08-07 12:04:53.534644', '2016-08-07 12:04:53.534644', 409608538)[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$GmTngVkqLLmJQRfFUSgrgOq0y03y1QCmJRcP2rB5r/ld/ml6CtQdG', '2016-08-07 12:04:53 UTC', '2016-08-07 12:04:53.534644', '2016-08-07 12:04:53.534644', 659682706)[0m
+  [1m[35m (16.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------
+UsersControllerTest: test_should_get_new_user_session
+-----------------------------------------------------
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$t06luWQseEn4xcan3oEoCOoUz02F8kaAadggkszkUu/vR0CWoZIMm', '2016-08-07 12:06:01 UTC', '2016-08-07 12:06:01.286337', '2016-08-07 12:06:01.286337', 762146111)[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$AkBALuhC5HzRTFM.7g2edOL1Ar/5ENscNmfLDyjO5xivu/dhKJ.DS', '2016-08-07 12:06:01 UTC', '2016-08-07 12:06:01.286337', '2016-08-07 12:06:01.286337', 950961012)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$l8pMKIF0VfeOLeKCz4Vs2exzwyORMQjPJBpSJ6mIBaTsQUCIsYcBi', '2016-08-07 12:06:01 UTC', '2016-08-07 12:06:01.286337', '2016-08-07 12:06:01.286337', 409608538)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$KGYyz668.yFQ9u9K/qEAb.ksea55FQKRmoqLd24iByC0VxpqYtsre', '2016-08-07 12:06:01 UTC', '2016-08-07 12:06:01.286337', '2016-08-07 12:06:01.286337', 659682706)[0m
+  [1m[35m (16.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------
+UsersControllerTest: test_should_get_new_user_session
+-----------------------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$IwVmg9jSh7LWR/TF3RCxuuVj7/STw/eyBgvuUFlM4fs/JzIxqDL8q', '2016-08-07 12:09:24 UTC', '2016-08-07 12:09:24.166714', '2016-08-07 12:09:24.166714', 762146111)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$FeOQHaQzBDY6oh3iMod4aeUABLlYRCi1K5IsD3cPi10A2DT3r6RzO', '2016-08-07 12:09:24 UTC', '2016-08-07 12:09:24.166714', '2016-08-07 12:09:24.166714', 950961012)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$afsQXk1TICF1JuLCAiNjfOLkeg3/CsVWVwdbuBHHagpCrK7A2uNIe', '2016-08-07 12:09:24 UTC', '2016-08-07 12:09:24.166714', '2016-08-07 12:09:24.166714', 409608538)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$Au6UcSV9.RshvkDwOIPiGOkSB7akDwU7LXrYJxrRDdUXqjiXAnY32', '2016-08-07 12:09:24 UTC', '2016-08-07 12:09:24.166714', '2016-08-07 12:09:24.166714', 659682706)[0m
+  [1m[35m (14.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserControllerTest: test_should_get_new_user_session
+----------------------------------------------------
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$v2AxWIs3KdcvY8nqWCj74erQyfAaE6uNA.QoqobCGjh2KIhIZGoTK', '2016-08-07 12:13:59 UTC', '2016-08-07 12:13:59.546984', '2016-08-07 12:13:59.546984', 762146111)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$gPs1ApjQ6mrb6goSgtqe.e1C2rjrspZ1YeupBbrQ5bTX/ZNsoygE6', '2016-08-07 12:13:59 UTC', '2016-08-07 12:13:59.546984', '2016-08-07 12:13:59.546984', 950961012)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$emSK5LAl/aC7dyIF6ANnMOA7MtuNY8imHMgACvI/3pmICw9KOSk2O', '2016-08-07 12:13:59 UTC', '2016-08-07 12:13:59.546984', '2016-08-07 12:13:59.546984', 409608538)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$2Jgt9noXD.Onv16oE1ox3uxEV1WvcmdcaONJlj..3eS8IdITdqCeK', '2016-08-07 12:13:59 UTC', '2016-08-07 12:13:59.546984', '2016-08-07 12:13:59.546984', 659682706)[0m
+  [1m[35m (14.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserControllerTest: test_should_get_new_user_session
+----------------------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
