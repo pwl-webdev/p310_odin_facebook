@@ -4,7 +4,7 @@ class FriendshipsController < ApplicationController
 		@friend = User.find(params[:friend_id])
 		@friendship1 = Friendship.new(:user => @user, :friend => @friend, :status => 'requested')
 		@friendship2 = Friendship.new(:user => @friend, :friend => @user, :status => 'pending')
-		if @friendship1.save && @friendship2.save
+		if @friendship1.save! && @friendship2.save!
 			flash[:success] = "Invitation to #{@friend.email} was sent successfuly!"
 		else
 			flash[:danger] = "An error occured"

@@ -128,3 +128,402 @@ UserControllerTest: test_should_get_new_user_session
   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
   [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 18:40:37.188487', '2016-08-08 18:40:37.188487', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 18:40:37.188487', '2016-08-08 18:40:37.188487', 298486374)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$Q6U3Z99PWS9Ex/ZmoEIkUOYaUEDZaeCfsEV4BvDrnTOh7S2VB88JW', '2016-08-08 18:40:37 UTC', '2016-08-08 18:40:37.202105', '2016-08-08 18:40:37.202105', 762146111)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$O2FmiHocr2tT3sNB.DxhO.V2MDQbWkoKAsxQnlkQghCF1w1iuI8Ti', '2016-08-08 18:40:37 UTC', '2016-08-08 18:40:37.202105', '2016-08-08 18:40:37.202105', 950961012)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$7HWzEoWwTIESiTeZuX78ruUQbQcorHyao7KaIJv8zmzMZ3CdaO3Hi', '2016-08-08 18:40:37 UTC', '2016-08-08 18:40:37.202105', '2016-08-08 18:40:37.202105', 409608538)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$hG8h1fVwbSdl3XSL8tGgKO5STwW1S0lgajJz7uwtyRq0wrOSh73x2', '2016-08-08 18:40:37 UTC', '2016-08-08 18:40:37.202105', '2016-08-08 18:40:37.202105', 659682706)[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UserFriendshipTest: test_should_send_friend_request
+---------------------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-08-08 20:40:37 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (18.3ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 5869ms (Views: 5867.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 762146111]]
+Started POST "/friendships" for 127.0.0.1 at 2016-08-08 20:40:43 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friend_id"=>"950961012"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 17ms (ActiveRecord: 1.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 762146111]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 18:43:40.926955', '2016-08-08 18:43:40.926955', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 18:43:40.926955', '2016-08-08 18:43:40.926955', 298486374)[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$L0AHY.0up56FsecNLpJZBOQ8MbZT3BomD8J5UxgP41VV/6C9WDgnW', '2016-08-08 18:43:40 UTC', '2016-08-08 18:43:40.940631', '2016-08-08 18:43:40.940631', 762146111)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$qw0sOcjZqaNWKkj9tp7xP.nT5o.dGWPjoavGJ7XQMNZ1N1.Ug84z2', '2016-08-08 18:43:40 UTC', '2016-08-08 18:43:40.940631', '2016-08-08 18:43:40.940631', 950961012)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$XnXn.twISaiOzTR9Fvmmj.MgKeVMoawIYpCxFWsoTAnQDw9AoEX/O', '2016-08-08 18:43:40 UTC', '2016-08-08 18:43:40.940631', '2016-08-08 18:43:40.940631', 409608538)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$1UC5hEZCvM1nDVdlxgQf7eqH4n.7ZuZRPDBw6M8O9WJ/OvKPfHgDC', '2016-08-08 18:43:40 UTC', '2016-08-08 18:43:40.940631', '2016-08-08 18:43:40.940631', 659682706)[0m
+  [1m[35m (23.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UserFriendshipTest: test_should_send_friend_request
+---------------------------------------------------
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-08-08 20:43:41 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (18.9ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 285ms (Views: 283.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships"[0m
+Started POST "/friendships" for 127.0.0.1 at 2016-08-08 20:43:41 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friend_id"=>"950961012"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 23ms (ActiveRecord: 1.4ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 18:44:15.643987', '2016-08-08 18:44:15.643987', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 18:44:15.643987', '2016-08-08 18:44:15.643987', 298486374)[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$zshxJcOrcVZECrkPWC4kwubjFhr5olBdp6PFWp2podU5lGCmplIWy', '2016-08-08 18:44:15 UTC', '2016-08-08 18:44:15.659139', '2016-08-08 18:44:15.659139', 762146111)[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$KkXkhYgrzM9/Oq14q3YJe.T2S3a9UXr2hPQo63dEMij8A3UH54RPi', '2016-08-08 18:44:15 UTC', '2016-08-08 18:44:15.659139', '2016-08-08 18:44:15.659139', 950961012)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$9Gh43e/b0HywGGpesT6Mce/gYwwUFSdJtaG.WCrNkF30.Oa0U33f6', '2016-08-08 18:44:15 UTC', '2016-08-08 18:44:15.659139', '2016-08-08 18:44:15.659139', 409608538)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$DDmqlbgI7Yhokf5hbt85o.hq8DbePrB/nUocaTdWO4mUht.MLcNRa', '2016-08-08 18:44:15 UTC', '2016-08-08 18:44:15.659139', '2016-08-08 18:44:15.659139', 659682706)[0m
+  [1m[35m (25.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UserFriendshipTest: test_should_send_friend_request
+---------------------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-08-08 20:44:15 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (31.8ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 303ms (Views: 301.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships"[0m
+Started POST "/friendships" for 127.0.0.1 at 2016-08-08 20:44:16 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friend_id"=>"950961012"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 29ms (ActiveRecord: 1.4ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 18:45:07.602705', '2016-08-08 18:45:07.602705', 980190962)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 18:45:07.602705', '2016-08-08 18:45:07.602705', 298486374)[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$8wSVJ.0vonaK.NfssOGvOe7H3vZpkT668EKQ8kGLhmwjtu5stSazO', '2016-08-08 18:45:07 UTC', '2016-08-08 18:45:07.617846', '2016-08-08 18:45:07.617846', 762146111)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$NS7Jslmvco7J8vscXnRSdOsnzEeDFj8jwSTxS7w7oyG.BldzwyT7m', '2016-08-08 18:45:07 UTC', '2016-08-08 18:45:07.617846', '2016-08-08 18:45:07.617846', 950961012)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$GsFhDL9MHIprA2kpS6CPeO0q0FPmdCrubyKOtJCD1ZevFARyGAtem', '2016-08-08 18:45:07 UTC', '2016-08-08 18:45:07.617846', '2016-08-08 18:45:07.617846', 409608538)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$RJBauXUL0oBkHZyn20AYO.Tjq2x/T32Ey16u7thmwdO3A6xRvc8Bu', '2016-08-08 18:45:07 UTC', '2016-08-08 18:45:07.617846', '2016-08-08 18:45:07.617846', 659682706)[0m
+  [1m[35m (20.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UserFriendshipTest: test_should_send_friend_request
+---------------------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-08-08 20:45:07 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (17.6ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 315ms (Views: 313.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships"[0m
+Started POST "/friendships" for 127.0.0.1 at 2016-08-08 20:45:08 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friend_id"=>"950961012"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 35ms (ActiveRecord: 1.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 18:51:26.262278', '2016-08-08 18:51:26.262278', 980190962)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 18:51:26.262278', '2016-08-08 18:51:26.262278', 298486374)[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$0vA8zeXfO8XGRFyOZH3sfeU16v.eTeBNyNg030w1R3gxpiIaZjW4a', '2016-08-08 18:51:26 UTC', '2016-08-08 18:51:26.278061', '2016-08-08 18:51:26.278061', 762146111)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$TVNahXjBzU.JaQA7qOhetuXS3PMgyQrxZ7VCR0k92CsQFeEhiX7r.', '2016-08-08 18:51:26 UTC', '2016-08-08 18:51:26.278061', '2016-08-08 18:51:26.278061', 950961012)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$HIHaAgPBNEWsagT5Hyb0KelQItOOb3sfReUBLur9TCfoBFxoZUCdm', '2016-08-08 18:51:26 UTC', '2016-08-08 18:51:26.278061', '2016-08-08 18:51:26.278061', 409608538)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$1smdlGfh9ciqZEtsFt1BKul7qF8NK4ZHWe7RplSunwJqAEJB.7ugm', '2016-08-08 18:51:26 UTC', '2016-08-08 18:51:26.278061', '2016-08-08 18:51:26.278061', 659682706)[0m
+  [1m[35m (24.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UserFriendshipTest: test_should_send_friend_request
+---------------------------------------------------
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-08-08 20:51:26 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (17.7ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 347ms (Views: 345.3ms | ActiveRecord: 0.0ms)
+Started POST "/friendships" for 127.0.0.1 at 2016-08-08 20:51:27 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friend_id"=>"950961012"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 62ms (ActiveRecord: 1.5ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 762146111]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 18:52:14.512660', '2016-08-08 18:52:14.512660', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 18:52:14.512660', '2016-08-08 18:52:14.512660', 298486374)[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$8d8rQHPGERxRSqXUDDl6J.a8ApG/04arHtLBtW8fUfkGN6MawPira', '2016-08-08 18:52:14 UTC', '2016-08-08 18:52:14.525600', '2016-08-08 18:52:14.525600', 762146111)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$5qCPFNwG0nraN0kFBmMNaOVqpD7ExsR5CUhyrmaL32C44ZVDGZ3zO', '2016-08-08 18:52:14 UTC', '2016-08-08 18:52:14.525600', '2016-08-08 18:52:14.525600', 950961012)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$0.z2OTAqLGR8DUTexFSfMu5.VDHt/Yo.89Ftxs1kPEW4HsZ80NNkS', '2016-08-08 18:52:14 UTC', '2016-08-08 18:52:14.525600', '2016-08-08 18:52:14.525600', 409608538)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$RXNN68qsDAZwgqJ8pcuwVetvQH4gAzziSez2Q1.oLu8MJq3usYWHW', '2016-08-08 18:52:14 UTC', '2016-08-08 18:52:14.525600', '2016-08-08 18:52:14.525600', 659682706)[0m
+  [1m[35m (21.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UserFriendshipTest: test_should_send_friend_request
+---------------------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-08-08 20:52:14 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (17.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 301ms (Views: 298.9ms | ActiveRecord: 0.0ms)
+Started POST "/friendships" for 127.0.0.1 at 2016-08-08 20:52:15 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friend_id"=>"950961012"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 20ms (ActiveRecord: 1.4ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 762146111]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 18:57:56.850937', '2016-08-08 18:57:56.850937', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 18:57:56.850937', '2016-08-08 18:57:56.850937', 298486374)[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$Dyipxuf69J0cx9ltrdCp3OiWCiGZSt.JPRgDE9XFeDbvf8kZNcgYq', '2016-08-08 18:57:56 UTC', '2016-08-08 18:57:56.863602', '2016-08-08 18:57:56.863602', 762146111)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$TBZnyjJD1EpXeR4lIvbDnuOMweAXDf26xo.nMIeZfv5CMILr/xbKG', '2016-08-08 18:57:56 UTC', '2016-08-08 18:57:56.863602', '2016-08-08 18:57:56.863602', 950961012)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$8mLMNheQulvXgtVioH72AOrWl3hH5AyEe48kFaSCtwWDK9l0kIQT6', '2016-08-08 18:57:56 UTC', '2016-08-08 18:57:56.863602', '2016-08-08 18:57:56.863602', 409608538)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$/p6juHk0iDYDgUyT3lUQteH9dvsTKtpn9g5BafV.f6CXUq6oBhECC', '2016-08-08 18:57:56 UTC', '2016-08-08 18:57:56.863602', '2016-08-08 18:57:56.863602', 659682706)[0m
+  [1m[35m (22.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UserFriendshipTest: test_should_send_friend_request
+---------------------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+Started GET "/users/sign_in?session[email]=michael%40example.com&session[password]=[FILTERED]" for 127.0.0.1 at 2016-08-08 20:57:57 +0200
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (291.0ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 580ms (Views: 567.4ms | ActiveRecord: 0.0ms)
+Started POST "/friendships" for 127.0.0.1 at 2016-08-08 20:57:57 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friend_id"=>"950961012"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 33ms (ActiveRecord: 1.5ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 762146111]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 19:17:58.404266', '2016-08-08 19:17:58.404266', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 19:17:58.404266', '2016-08-08 19:17:58.404266', 298486374)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$UXbs7gJ1WofXHn1uD3fVauRnXu.EslmfF65yhACGPMvrRTgbq40PO', '2016-08-08 19:17:58 UTC', '2016-08-08 19:17:58.420345', '2016-08-08 19:17:58.420345', 762146111)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$O/78Od3xmUKzwivWqROqBOJITa/QfsHsSRnvBAM/sKyBs6i8moMIu', '2016-08-08 19:17:58 UTC', '2016-08-08 19:17:58.420345', '2016-08-08 19:17:58.420345', 950961012)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$5EA3qgPR8vgMmHelBRcpbOjmNXl9zaGTBB6TB9tuZFoxkdTOaaaS6', '2016-08-08 19:17:58 UTC', '2016-08-08 19:17:58.420345', '2016-08-08 19:17:58.420345', 409608538)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$GxM9TKBeeuslxhjdYTCXWeBecwcJ2.X/NSdirSgOBVmpbzU1iK2ly', '2016-08-08 19:17:58 UTC', '2016-08-08 19:17:58.420345', '2016-08-08 19:17:58.420345', 659682706)[0m
+  [1m[35m (19.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UserFriendshipTest: test_should_send_friend_request
+---------------------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+Started GET "/users/sign_in?session[email]=michael%40example.com&session[password]=[FILTERED]" for 127.0.0.1 at 2016-08-08 21:17:58 +0200
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (301.6ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 644ms (Views: 632.4ms | ActiveRecord: 0.0ms)
+Started POST "/friendships" for 127.0.0.1 at 2016-08-08 21:17:59 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friend_id"=>"950961012"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 28ms (ActiveRecord: 1.6ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 762146111]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 19:21:49.273819', '2016-08-08 19:21:49.273819', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-08 19:21:49.273819', '2016-08-08 19:21:49.273819', 298486374)[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$eRPcjAvqcAIq19BLbyKi4.FQhglig40OVgDdI5Rb4f2N4nL4oCs9e', '2016-08-08 19:21:49 UTC', '2016-08-08 19:21:49.288050', '2016-08-08 19:21:49.288050', 762146111)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$t1no5d9QClXcBKNnP//G3O7D9K2zS.WVuxToBJJc1xIQYR/oNjlba', '2016-08-08 19:21:49 UTC', '2016-08-08 19:21:49.288050', '2016-08-08 19:21:49.288050', 950961012)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$aPiwN1baZ5.ZAIwXYxgq1epug4bE/v9Vcbbb5M6gsl.zFxYDn1JTC', '2016-08-08 19:21:49 UTC', '2016-08-08 19:21:49.288050', '2016-08-08 19:21:49.288050', 409608538)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$JGMMVGthHNBl1AogUggxjOEnTLHoIo9unMC2zf2sJtAvqOSaUTuSm', '2016-08-08 19:21:49 UTC', '2016-08-08 19:21:49.288050', '2016-08-08 19:21:49.288050', 659682706)[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UserFriendshipTest: test_should_send_friend_request
+---------------------------------------------------
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+Started GET "/users/sign_in?session[email]=michael%40example.com&session[password]=[FILTERED]" for 127.0.0.1 at 2016-08-08 21:21:49 +0200
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (302.5ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 666ms (Views: 653.9ms | ActiveRecord: 0.0ms)
+Started POST "/friendships" for 127.0.0.1 at 2016-08-08 21:21:50 +0200
+Processing by FriendshipsController#create as HTML
+  Parameters: {"friend_id"=>"950961012"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 950961012], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 422 Unprocessable Entity in 17ms (ActiveRecord: 1.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
