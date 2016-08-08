@@ -27,6 +27,7 @@
 			     <div class="col-md-6 col-md-offset-3">
 			      <%= gravatar_for friend, size: 50 %>
 			      <%= link_to friend.email, friend %>
+			      <%= render 'removefriend', locals: {friend: friend} if user_signed_in? %>
 			      </div>
 			    </li>
 			  <% end %>
@@ -44,6 +45,7 @@
 			     <div class="col-md-6 col-md-offset-3">
 			      <%= gravatar_for friend, size: 50 %>
 			      <%= link_to friend.email, friend %>
+			      <%= render 'removefriend', locals: {friend: friend} if user_signed_in? %>
 			      </div>
 			    </li>
 			  <% end %>
