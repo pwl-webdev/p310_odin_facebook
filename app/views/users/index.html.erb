@@ -1,1 +1,71 @@
-users#index
+<% if @pending_friends.any? %>	
+	<h1>Pending friend request</h1>
+	<div class="row">
+		<div class="u-pull-right">
+			<ul class="users">
+			  <% @pending_friends.each do |friend| %>
+			    <li>
+			     <div class="col-md-6 col-md-offset-3">
+			      <%= gravatar_for friend, size: 50 %>
+			      <%= link_to friend.email, friend %>
+			      <%= render 'acceptfriend', locals: {friend: friend} if user_signed_in? %>
+			      <%= render 'removefriend', locals: {friend: friend} if user_signed_in? %>
+			      </div>
+			    </li>
+			  <% end %>
+			</ul>
+		</div>
+	</div>
+<% end %>
+<% if @friends.any? %>	
+	<h1>Your friends</h1>
+	<div class="row">
+		<div class="u-pull-right">
+			<ul class="users">
+			  <% @friends.each do |friend| %>
+			    <li>
+			     <div class="col-md-6 col-md-offset-3">
+			      <%= gravatar_for friend, size: 50 %>
+			      <%= link_to friend.email, friend %>
+			      </div>
+			    </li>
+			  <% end %>
+			</ul>
+		</div>
+	</div>
+<% end %>
+<% if @requested_friends.any? %>	
+	<h1>Invitations send to</h1>
+	<div class="row">
+		<div class="u-pull-right">
+			<ul class="users">
+			  <% @requested_friends.each do |friend| %>
+			    <li>
+			     <div class="col-md-6 col-md-offset-3">
+			      <%= gravatar_for friend, size: 50 %>
+			      <%= link_to friend.email, friend %>
+			      </div>
+			    </li>
+			  <% end %>
+			</ul>
+		</div>
+	</div>
+<% end %>
+<% if @users.any? %>
+	<h1>Invite new friends</h1>
+	<div class="row">
+		<div class="u-pull-right">
+			<ul class="users">
+			  <% @users.each do |user| %>
+			    <li>
+			     <div class="col-md-6 col-md-offset-3">
+			      <%= gravatar_for user, size: 50 %>
+			      <%= link_to user.email, user %>
+			      <%= render 'addfriend', locals: {user: user} if user_signed_in? %>
+			       <div class="col-md-6 col-md-offset-3">
+			    </li>
+			  <% end %>
+			</ul>
+		</div>
+	</div>
+<% end %>

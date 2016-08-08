@@ -1,0 +1,4 @@
+<%= form_for(current_user.friendships.find_by(friend_id: locals[:friend][:id]),
+             html: { method: :delete }) do |f| %>
+  <%= f.submit "Remove", class: "btn btn-primary"  %>
+<% end %>
