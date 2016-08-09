@@ -13,6 +13,16 @@
 				</h4>
 			</section>
 		  </aside>
+			  <div class="col-md-8">
+			        <section class="micropost_form">
+       					<%= render 'posts/post_form' %>
+      				</section>
+			    <% if @user.posts.any? %>
+			      <ul class="microposts">
+			        <%= render @posts %>
+			      </ul>
+			    <% end %>
+			  </div>
 		</div>
 	</div>
 </div>

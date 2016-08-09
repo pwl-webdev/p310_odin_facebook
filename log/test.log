@@ -527,3 +527,700 @@ Processing by FriendshipsController#create as HTML
   [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
 Completed 422 Unprocessable Entity in 17ms (ActiveRecord: 1.3ms)
   [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (14.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (25.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1368270500717249220);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePosts (20160809112151)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (182.7ms)[0m  [1m[35mCREATE TABLE "posts" ("id" serial primary key, "content" text, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_5b5ddfd518"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (52.3ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_user_id" ON "posts"  ("user_id")[0m
+  [1m[35m (29.5ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_user_id_and_created_at" ON "posts"  ("user_id", "created_at")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160809112151"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", 2016-08-09 11:30:40 UTC], ["key", "environment"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1368270500717249220)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'friendships'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (16.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'posts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL[0m
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (16.1ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 11:30:47.195303', '2016-08-09 11:30:47.195303', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 11:30:47.195303', '2016-08-09 11:30:47.195303', 298486374)[0m
+  [1m[36mFixture Delete (5.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$Zl.m0n.ycrM.68rClHezZeQICo1U/jjx0IWqJcaT8VLsoedB0ZsDy', '2016-08-09 11:30:47 UTC', '2016-08-09 11:30:47.229446', '2016-08-09 11:30:47.229446', 762146111)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$yckM1KY04oVCI3CQDDfZ4OzteC7ohn.MHrRmpSLtYBqedh8o1JBT.', '2016-08-09 11:30:47 UTC', '2016-08-09 11:30:47.229446', '2016-08-09 11:30:47.229446', 950961012)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$ibTFWwjEV3o8JBu59fQOp.iCbf0Rz5L4Drus54siGi.UNg2Ue3q0C', '2016-08-09 11:30:47 UTC', '2016-08-09 11:30:47.229446', '2016-08-09 11:30:47.229446', 409608538)[0m
+  [1m[36mFixture Insert (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$j55ToI9Je8S5LgLPIjeic.WEIRpiG6wGegSo5oqRT6PHTNnjREGMe', '2016-08-09 11:30:47 UTC', '2016-08-09 11:30:47.229446', '2016-08-09 11:30:47.229446', 659682706)[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_user_id_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+PostTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 11:33:29.342012', '2016-08-09 11:33:29.342012', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 11:33:29.342012', '2016-08-09 11:33:29.342012', 298486374)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$RDAjDCgIqY2CUzARYuZS3.acbRCPG8A6IwM69Qj.CF54pX1m6WL2G', '2016-08-09 11:33:29 UTC', '2016-08-09 11:33:29.356056', '2016-08-09 11:33:29.356056', 762146111)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$SbIkSj48VGMhpPxfT.FttOQ1uxcrYu2/RqQSCfZWilL/iuMVCqWrK', '2016-08-09 11:33:29 UTC', '2016-08-09 11:33:29.356056', '2016-08-09 11:33:29.356056', 950961012)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$7V9woPhxWAhe2MTWrad77ug5ESj3UFEJRTuNfMYaeo3101zUWIHq2', '2016-08-09 11:33:29 UTC', '2016-08-09 11:33:29.356056', '2016-08-09 11:33:29.356056', 409608538)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$l7W.6JZRN3z1wJyX/XwR5eTILH8YnV7eQqVWg6MQvky1pB1L/BkJ.', '2016-08-09 11:33:29 UTC', '2016-08-09 11:33:29.356056', '2016-08-09 11:33:29.356056', 659682706)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_content_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_user_id_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+PostTest: test_content_should_be_at_most_1000_characters
+--------------------------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+PostTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL[0m
+  [1m[35m (28.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 11:36:43.683641', '2016-08-09 11:36:43.683641', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 11:36:43.683641', '2016-08-09 11:36:43.683641', 298486374)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$PZkLqCbF5Jp2l3Ov3anXU.ydmpflllfAWynFoBpgiJEOc7wFN.Oaq', '2016-08-09 11:36:43 UTC', '2016-08-09 11:36:43.699595', '2016-08-09 11:36:43.699595', 762146111)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$0HSEhV9B/0jUcpopvrxrYO2Gzmctaetlz8xc15iO6W5UrObWc7ggW', '2016-08-09 11:36:43 UTC', '2016-08-09 11:36:43.699595', '2016-08-09 11:36:43.699595', 950961012)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$DL7bQnIRP9yzVWKqsLgyZebmForQhYg0L/NR/VL/pLsWZZjBSJz0e', '2016-08-09 11:36:43 UTC', '2016-08-09 11:36:43.699595', '2016-08-09 11:36:43.699595', 409608538)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$yPuHT8Jet.OBnqe0qWv9WuqUIK5b4A85TB24uhjeLoayJ30KRFyM6', '2016-08-09 11:36:43 UTC', '2016-08-09 11:36:43.699595', '2016-08-09 11:36:43.699595', 659682706)[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_content_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+PostTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+PostTest: test_content_should_be_at_most_1000_characters
+--------------------------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_user_id_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL[0m
+  [1m[35m (16.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 11:37:00.240899', '2016-08-09 11:37:00.240899', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 11:37:00.240899', '2016-08-09 11:37:00.240899', 298486374)[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$qoQ68u.jPgTOB1HG9ZH72OaLQZP4iw.n2kkbP41yDnf1muGpUj8XW', '2016-08-09 11:37:00 UTC', '2016-08-09 11:37:00.258202', '2016-08-09 11:37:00.258202', 762146111)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$DTmY35ynKXYjDTDX19Hm5embBrUV4Q7M0tjizQFT.r1778TW9lNVq', '2016-08-09 11:37:00 UTC', '2016-08-09 11:37:00.258202', '2016-08-09 11:37:00.258202', 950961012)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$YrjS7p36LgxSFtXbYTQMqOU7pcJUP6M/HZhxLpzd3lhmro1J64pOK', '2016-08-09 11:37:00 UTC', '2016-08-09 11:37:00.258202', '2016-08-09 11:37:00.258202', 409608538)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$G2X1pEFFPp91JxLQ.b/5NuFTPVMwnL/nlrEIIx/VNf67L8gS1/Uxq', '2016-08-09 11:37:00 UTC', '2016-08-09 11:37:00.258202', '2016-08-09 11:37:00.258202', 659682706)[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+PostTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+PostTest: test_content_should_be_at_most_1000_characters
+--------------------------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_user_id_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_content_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL[0m
+  [1m[35m (24.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 11:39:57.352899', '2016-08-09 11:39:57.352899', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 11:39:57.352899', '2016-08-09 11:39:57.352899', 298486374)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$n.uRcPIPT5aRygba.RlnGe5jrqZhtrb8ISDIKxoNIOrDiZY7cacWu', '2016-08-09 11:39:57 UTC', '2016-08-09 11:39:57.369359', '2016-08-09 11:39:57.369359', 762146111)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$jzLuQMA2wKTAPOAaBxYepumHOrlzGaVvxVcl6i6RarHGWSeqE.42S', '2016-08-09 11:39:57 UTC', '2016-08-09 11:39:57.369359', '2016-08-09 11:39:57.369359', 950961012)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$0IRwOKTj6w02bsl9JV.HceX52gyE5ZYBoIXGpYUqpfeEf2.aw8vyu', '2016-08-09 11:39:57 UTC', '2016-08-09 11:39:57.369359', '2016-08-09 11:39:57.369359', 409608538)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$OfCgqAJF23lhpZHDt1gemOko.zXBcUjZM.h3L.lcfBzBrIXh2.LC.', '2016-08-09 11:39:57 UTC', '2016-08-09 11:39:57.369359', '2016-08-09 11:39:57.369359', 659682706)[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('I just ate an orange!', '2016-08-09 11:29:57 UTC', '2016-08-09 11:39:57.377784', 499495288)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Check out the @tauday site by @mhartl: http://tauday.com', '2013-08-09 11:39:57 UTC', '2016-08-09 11:39:57.377784', 517500819)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Sad cats are sad: http://youtu.be/PKffm2uI4dk', '2016-08-09 09:39:57 UTC', '2016-08-09 11:39:57.377784', 12348100)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Writing a short test', '2016-08-09 11:39:57 UTC', '2016-08-09 11:39:57.377784', 941832919)[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+PostTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_user_id_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+PostTest: test_content_should_be_at_most_1000_characters
+--------------------------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_content_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+PostTest: test_order_should_be_most_recent_first
+------------------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 11:40:34.748924', '2016-08-09 11:40:34.748924', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 11:40:34.748924', '2016-08-09 11:40:34.748924', 298486374)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$GcxBbYGwPkuxHQXMkUChb.zbP8Fi0/EuxVo.UKB.iatnq4C97qC1u', '2016-08-09 11:40:34 UTC', '2016-08-09 11:40:34.765165', '2016-08-09 11:40:34.765165', 762146111)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$L6Knqmxm5n4eXnC8WNzosuCvzhiA7HNihF6ocncGA5goHRwKZwvpa', '2016-08-09 11:40:34 UTC', '2016-08-09 11:40:34.765165', '2016-08-09 11:40:34.765165', 950961012)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$cPFPQCD/PAfSJE1sQb1tHuM1nORFmZ/VUGL/WgHmtz/vUkz4CHQEW', '2016-08-09 11:40:34 UTC', '2016-08-09 11:40:34.765165', '2016-08-09 11:40:34.765165', 409608538)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$Zze8V68dpT6Wg5fNnS/xeeQPKZHmEwSs1wDwbgc/C.Nw4IRhbd/OK', '2016-08-09 11:40:34 UTC', '2016-08-09 11:40:34.765165', '2016-08-09 11:40:34.765165', 659682706)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('I just ate an orange!', '2016-08-09 11:30:34 UTC', '2016-08-09 11:40:34.773616', 499495288)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Check out the @tauday site by @mhartl: http://tauday.com', '2013-08-09 11:40:34 UTC', '2016-08-09 11:40:34.773616', 517500819)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Sad cats are sad: http://youtu.be/PKffm2uI4dk', '2016-08-09 09:40:34 UTC', '2016-08-09 11:40:34.773616', 12348100)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Writing a short test', '2016-08-09 11:40:34 UTC', '2016-08-09 11:40:34.773616', 941832919)[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+PostTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+PostTest: test_order_should_be_most_recent_first
+------------------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 941832919], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_user_id_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_content_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+PostTest: test_content_should_be_at_most_1000_characters
+--------------------------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL[0m
+  [1m[35m (23.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 11:42:43.137782', '2016-08-09 11:42:43.137782', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 11:42:43.137782', '2016-08-09 11:42:43.137782', 298486374)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$y9tXsHF89N23XUEwPiq/wuZls80Y8L9X/7vkYRMgW4rpe7as4fkRy', '2016-08-09 11:42:43 UTC', '2016-08-09 11:42:43.153317', '2016-08-09 11:42:43.153317', 762146111)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$jIsH4OFZQ64pt12/yICSLOe0Iqdap4oN2cWqnsBNaIu7BZVIHp3JW', '2016-08-09 11:42:43 UTC', '2016-08-09 11:42:43.153317', '2016-08-09 11:42:43.153317', 950961012)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$Maj4nx/lbOiVSHoogqS3QuIA1goOSxk17maA1HSEKgIJY6jpYbjt.', '2016-08-09 11:42:43 UTC', '2016-08-09 11:42:43.153317', '2016-08-09 11:42:43.153317', 409608538)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$EE5t8xlmAyWbcoDIOZKBTOQC.4zfsyQowHx4C7cFqptYJxy37f1KS', '2016-08-09 11:42:43 UTC', '2016-08-09 11:42:43.153317', '2016-08-09 11:42:43.153317', 659682706)[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('I just ate an orange!', '2016-08-09 11:32:43 UTC', '2016-08-09 11:42:43.161949', 499495288)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Check out the @tauday site by @mhartl: http://tauday.com', '2013-08-09 11:42:43 UTC', '2016-08-09 11:42:43.161949', 517500819)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Sad cats are sad: http://youtu.be/PKffm2uI4dk', '2016-08-09 09:42:43 UTC', '2016-08-09 11:42:43.161949', 12348100)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Writing a short test', '2016-08-09 11:42:43 UTC', '2016-08-09 11:42:43.161949', 941832919)[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_user_id_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+PostTest: test_content_should_be_at_most_1000_characters
+--------------------------------------------------------
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+PostTest: test_order_should_be_most_recent_first
+------------------------------------------------
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 941832919], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+PostTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_content_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL[0m
+  [1m[35m (20.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 11:45:32.226978', '2016-08-09 11:45:32.226978', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 11:45:32.226978', '2016-08-09 11:45:32.226978', 298486374)[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$bi26YC/HgwtiEXDeBqaLEOxCh77jNz9K6mNDwNThaXqf0sXvRcKWm', '2016-08-09 11:45:32 UTC', '2016-08-09 11:45:32.241539', '2016-08-09 11:45:32.241539', 762146111)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$A3D/vTwPfVf6lB8QgmJQQuLSLI3JJiO9fRb78Tu3qvxEripZQUNgi', '2016-08-09 11:45:32 UTC', '2016-08-09 11:45:32.241539', '2016-08-09 11:45:32.241539', 950961012)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$qYSo9HgPm3xHTHstBR40euIr2kvGhgP8r4P7gSBs3pzuJTU9N9PtC', '2016-08-09 11:45:32 UTC', '2016-08-09 11:45:32.241539', '2016-08-09 11:45:32.241539', 409608538)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$OAQLaguKVGHNpW9Ly3cD1e3lvtg.vss4FnWV/rTLtLbqhcBfbjjqm', '2016-08-09 11:45:32 UTC', '2016-08-09 11:45:32.241539', '2016-08-09 11:45:32.241539', 659682706)[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('I just ate an orange!', '2016-08-09 11:35:32 UTC', '2016-08-09 11:45:32.251510', 499495288)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Check out the @tauday site by @mhartl: http://tauday.com', '2013-08-09 11:45:32 UTC', '2016-08-09 11:45:32.251510', 517500819)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Sad cats are sad: http://youtu.be/PKffm2uI4dk', '2016-08-09 09:45:32 UTC', '2016-08-09 11:45:32.251510', 12348100)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Writing a short test', '2016-08-09 11:45:32 UTC', '2016-08-09 11:45:32.251510', 941832919)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UserTest: test_associated_posts_should_be_destroyed
+---------------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "user@example.com"], ["encrypted_password", "$2a$04$CFsgLoPRb7F0wXlT0svtfOBCcAtzsfjzS9ivvyLzDe5Tik5y8NP5u"], ["created_at", 2016-08-09 11:45:32 UTC], ["updated_at", 2016-08-09 11:45:32 UTC], ["confirmation_token", "5Y3KsnitQ8bxq9azf33f"], ["confirmation_sent_at", 2016-08-09 11:45:32 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (5.2ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 341.6ms
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_user_id_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+PostTest: test_order_should_be_most_recent_first
+------------------------------------------------
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 941832919], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+PostTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+PostTest: test_content_should_be_at_most_1000_characters
+--------------------------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_content_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL[0m
+  [1m[35m (25.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 12:00:53.095147', '2016-08-09 12:00:53.095147', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 12:00:53.095147', '2016-08-09 12:00:53.095147', 298486374)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$C.ekK2MUzbUEQ8z9DHpMxeXU.m4Gb.6uGY10edzBKHe5gVzZbDwgS', '2016-08-09 12:00:53 UTC', '2016-08-09 12:00:53.107907', '2016-08-09 12:00:53.107907', 762146111)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$CctEyGCrtjZX/A3McBArn.YMqzb9PF0gkghjGVvqxkO7jicqmjRcC', '2016-08-09 12:00:53 UTC', '2016-08-09 12:00:53.107907', '2016-08-09 12:00:53.107907', 950961012)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$SUuw/Pw0WPYJlN09jaC93ejSqNmklaJSZLOAJnWf/4SDchiaOTwzm', '2016-08-09 12:00:53 UTC', '2016-08-09 12:00:53.107907', '2016-08-09 12:00:53.107907', 409608538)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$V4nZINmgigGw9M0t78xOV.BFlxdevnRZY98UpOF.LmqMVfA6yqU2q', '2016-08-09 12:00:53 UTC', '2016-08-09 12:00:53.107907', '2016-08-09 12:00:53.107907', 659682706)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('I just ate an orange!', '2016-08-09 11:50:53 UTC', '2016-08-09 12:00:53.115975', 499495288)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Check out the @tauday site by @mhartl: http://tauday.com', '2013-08-09 12:00:53 UTC', '2016-08-09 12:00:53.115975', 517500819)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Sad cats are sad: http://youtu.be/PKffm2uI4dk', '2016-08-09 10:00:53 UTC', '2016-08-09 12:00:53.115975', 12348100)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Writing a short test', '2016-08-09 12:00:53 UTC', '2016-08-09 12:00:53.115975', 941832919)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+PostTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+PostTest: test_content_should_be_at_most_1000_characters
+--------------------------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_content_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_user_id_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+PostTest: test_order_should_be_most_recent_first
+------------------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 941832919], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UserTest: test_associated_posts_should_be_destroyed
+---------------------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 409608538], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Lorem ipsum"], ["user_id", 409608538], ["created_at", 2016-08-09 12:00:53 UTC], ["updated_at", 2016-08-09 12:00:53 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mFriendship Load (0.4ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 409608538]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."created_at" DESC[0m  [["user_id", 409608538]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 941832920]]
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 409608538]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 12:29:40.457136', '2016-08-09 12:29:40.457136', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 12:29:40.457136', '2016-08-09 12:29:40.457136', 298486374)[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$DIxDozBko0z0IiTnaWofNebzlH9L7Ehh1MBNNwmwAO/TGz9V4MR5G', '2016-08-09 12:29:40 UTC', '2016-08-09 12:29:40.471026', '2016-08-09 12:29:40.471026', 762146111)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$UFyHEZeU18vcyHnI5gN9MufC80B2WvgmW.fE5rGB8rv81sR9AN.W.', '2016-08-09 12:29:40 UTC', '2016-08-09 12:29:40.471026', '2016-08-09 12:29:40.471026', 950961012)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$33fliQT0b9u8tukFdJUhue5tLwd2WJj4xDfkkZ5gF3f.Z/Ezlp68K', '2016-08-09 12:29:40 UTC', '2016-08-09 12:29:40.471026', '2016-08-09 12:29:40.471026', 409608538)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$bHV/9h0JXRLTIhWxJpeXH.HYPfx42S7JHFrbfcfeNOnRsKFFl8TiK', '2016-08-09 12:29:40 UTC', '2016-08-09 12:29:40.471026', '2016-08-09 12:29:40.471026', 659682706)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('I just ate an orange!', '2016-08-09 12:19:40 UTC', '2016-08-09 12:29:40.479752', 499495288)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Check out the @tauday site by @mhartl: http://tauday.com', '2013-08-09 12:29:40 UTC', '2016-08-09 12:29:40.479752', 517500819)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Sad cats are sad: http://youtu.be/PKffm2uI4dk', '2016-08-09 10:29:40 UTC', '2016-08-09 12:29:40.479752', 12348100)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Writing a short test', '2016-08-09 12:29:40 UTC', '2016-08-09 12:29:40.479752', 941832919)[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UserTest: test_associated_posts_should_be_destroyed
+---------------------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 409608538], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Lorem ipsum"], ["user_id", 409608538], ["created_at", 2016-08-09 12:29:40 UTC], ["updated_at", 2016-08-09 12:29:40 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 409608538]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."created_at" DESC[0m  [["user_id", 409608538]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 941832920]]
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 409608538]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------------
+PostsControllerTest: test_should_redirect_create_when_not_logged_in
+-------------------------------------------------------------------
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 499495288], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+Started POST "/posts" for 127.0.0.1 at 2016-08-09 14:29:40 +0200
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------
+PostsControllerTest: test_should_redirect_destroy_when_not_logged_in
+--------------------------------------------------------------------
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 499495288], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+Started DELETE "/posts/499495288" for 127.0.0.1 at 2016-08-09 14:29:40 +0200
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+PostTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_content_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+PostTest: test_order_should_be_most_recent_first
+------------------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 941832919], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_user_id_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+PostTest: test_content_should_be_at_most_1000_characters
+--------------------------------------------------------
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "friendships" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "friendships"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 12:31:47.934541', '2016-08-09 12:31:47.934541', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "friendships" ("created_at", "updated_at", "id") VALUES ('2016-08-09 12:31:47.934541', '2016-08-09 12:31:47.934541', 298486374)[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('michael@example.com', '$2a$04$RNYykeBOeDsAbCRkanwH4exL36iSdy1Vy.36tvepgB.SiHbr/xwxu', '2016-08-09 12:31:47 UTC', '2016-08-09 12:31:47.949114', '2016-08-09 12:31:47.949114', 762146111)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('duchess@example.gov', '$2a$04$S92ICQwsV4llpwcAoMxWWeYs8HiMFwA3Cnkefoc7.vFnIisLB48Du', '2016-08-09 12:31:47 UTC', '2016-08-09 12:31:47.949114', '2016-08-09 12:31:47.949114', 950961012)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('hands@example.gov', '$2a$04$Pn8OYU7yo59BTo89tU6r9O6KxCzQEPhQ0XPL3YJwycum0tcnX3r9K', '2016-08-09 12:31:47 UTC', '2016-08-09 12:31:47.949114', '2016-08-09 12:31:47.949114', 409608538)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "id") VALUES ('boss@example.gov', '$2a$04$krfVbZY3g68krdtcamoFFu7DgImokuXAUxEdU.QMdn9z/nFxNJyme', '2016-08-09 12:31:47 UTC', '2016-08-09 12:31:47.949114', '2016-08-09 12:31:47.949114', 659682706)[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('I just ate an orange!', '2016-08-09 12:21:47 UTC', '2016-08-09 12:31:47.957823', 499495288)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Check out the @tauday site by @mhartl: http://tauday.com', '2013-08-09 12:31:47 UTC', '2016-08-09 12:31:47.957823', 517500819)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Sad cats are sad: http://youtu.be/PKffm2uI4dk', '2016-08-09 10:31:47 UTC', '2016-08-09 12:31:47.957823', 12348100)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at", "id") VALUES ('Writing a short test', '2016-08-09 12:31:47 UTC', '2016-08-09 12:31:47.957823', 941832919)[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "friendships" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UserTest: test_associated_posts_should_be_destroyed
+---------------------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 409608538], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Lorem ipsum"], ["user_id", 409608538], ["created_at", 2016-08-09 12:31:48 UTC], ["updated_at", 2016-08-09 12:31:48 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mFriendship Load (0.3ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1[0m  [["user_id", 409608538]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."created_at" DESC[0m  [["user_id", 409608538]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 941832920]]
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 409608538]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------------
+PostsControllerTest: test_should_redirect_create_when_not_logged_in
+-------------------------------------------------------------------
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 499495288], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+Started POST "/posts" for 127.0.0.1 at 2016-08-09 14:31:48 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"content"=>"Lorem ipsum"}}
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------
+PostsControllerTest: test_should_redirect_destroy_when_not_logged_in
+--------------------------------------------------------------------
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 499495288], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+Started DELETE "/posts/499495288" for 127.0.0.1 at 2016-08-09 14:31:48 +0200
+Processing by PostsController#destroy as HTML
+  Parameters: {"id"=>"499495288"}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+PostTest: test_content_should_be_at_most_1000_characters
+--------------------------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+PostTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_user_id_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+PostTest: test_content_should_be_present
+----------------------------------------
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+PostTest: test_order_should_be_most_recent_first
+------------------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 941832919], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m

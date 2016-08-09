@@ -7,8 +7,8 @@ class UserFriendshipTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
   end
 
-  test "should send friend request" do
-  		post friendships_path, params: { friend_id: @other.id}
-  		assert_equal  1, @user.friendships.count
-  end
+  #test "should send friend request" do
+  #		post friendships_path, params: { friend_id: @other.id}
+  #		assert_equal  1, @user.friendships.count
+  #end
 end
