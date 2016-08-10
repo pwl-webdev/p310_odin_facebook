@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
   resources :friendships, only:  [:create, :destroy, :update]
   resources :posts, only: [:create, :destroy]
+  resources :comments, only: [:create, :destroy]
 end

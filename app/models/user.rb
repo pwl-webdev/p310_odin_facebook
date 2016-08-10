@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :pending_friends, -> { where(friendships: { status: "pending"}) }, :through =>:friendships, :source => :friend
 
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end

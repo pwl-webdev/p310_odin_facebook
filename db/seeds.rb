@@ -33,3 +33,11 @@ users = User.order(:created_at).take(6)
   content = Faker::Lorem.sentence(5)
   users.each { |user| user.posts.create!(content: content) }
 end
+
+User.find(1).posts.each do |post|
+  User.find(2).comments.create(:post => post, :content => Faker::Lorem.sentence(5))
+end
+
+User.find(2).posts.each do |post|
+  User.find(1).comments.create(:post => post, :content => Faker::Lorem.sentence(5))
+end

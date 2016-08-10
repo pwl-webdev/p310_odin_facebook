@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@posts = Post.where('user_id IN (SELECT friend_id FROM friendships where user_id = ?) OR user_id = ?', current_user.id, current_user.id)
 		@post = current_user.posts.build
+		@comment = current_user.comments.build
 	end
 	def index
 		@users = User.where('id NOT IN (SELECT friend_id FROM friendships where user_id = ?) AND id != ?', current_user.id, current_user.id)
