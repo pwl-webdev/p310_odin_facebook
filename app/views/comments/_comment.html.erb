@@ -1,6 +1,8 @@
 <li id="micropost-<%= comment.id %>">
   <%= link_to gravatar_for(comment.user, size: 20), comment.user %>
-  <%= hidden_field_tag 'post', comment.post  %>
   <span class="user"><%= link_to comment.user.email, comment.user %></span>
   <span class="content"><%= comment.content %></span>
+  <% if current_user == comment.user %>
+    <%= link_to "delete", comment, method: :delete, data: { confirm: "You sure?" } %>
+  <% end %>
 </li>
