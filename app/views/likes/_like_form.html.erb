@@ -1,0 +1,7 @@
+<%= form_for(@like) do |f| %>
+  <div class="field">
+    <%= f.hidden_field :post_id, value: @like.post_id  %>
+
+  </div>
+  <%= f.submit "Like", class: "btn" %>
+<% end %>

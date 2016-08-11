@@ -11,4 +11,5 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :liked_posts, :foreign_key => "user_id", :class_name => "Like"
 end

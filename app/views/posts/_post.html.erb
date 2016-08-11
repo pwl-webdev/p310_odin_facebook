@@ -4,6 +4,17 @@
   <span class="content"><%= post.content %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at) %> ago.
+    <% if post.likes.count > 0 %>
+    	<% @like_usr = []%>
+    	<% post.likes.each do |x| %>
+    	<% @like_usr << x.user.email %>
+    	<% end %>
+    	<%= "Liked by: #{@like_usr.join(", ")}" %>
+    <% end %>
+    <% if current_user.liked_posts.find_by(:post_id => post.id).nil?%>
+    	<% @like = post.likes.build %>
+    	<%= link_to "like", likes_path(:post_id => post.id), method: :post %>
+    <% end %>
     <% if current_user == post.user %>
       <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>
     <% end %>
